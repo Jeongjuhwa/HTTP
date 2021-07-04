@@ -242,6 +242,98 @@
 * GET, HEAD, POST, PATCH 캐시 가능  
 * 실제로는 GET, HEAD 정도만 캐시로 사용 -> POST, PATCH는 본문 내용까지 캐시 키로 고려해야 하는데, 구현 쉽지 않음  
 
+## HTTP 메서드 활용  
+* 쿼리 파라미터를 통한 데이터 전송: GET(주로 정렬 필터)  
+* POST, PUT, PATCH(회원가입, 상품 주문, 리소스 등록, 리소스 변경)  
+
+## 클라이언트에서 서버로 데이터 전송  
+* 정적 데이터 조회  
+* 동적 데이터 조회  
+* HTML FORM을 통한 데이터 전송  
+* HTTP API를 통한 데이터 전송  
+
+## 정적 데이터 조회  
+* 이미지, 정적 테스트 문서  
+* 조회는 GET 사용  
+* 쿼리 파라미터 없이 리소스 경로로 단순 조회  
+
+## 동적 데이터 조회  
+* 주로 검색, 게시판 목록에서 정렬 필터  
+* 조회 조건을 줄여주는 필터  
+* 조회는 GET 사용  
+* GET은 쿼리 파라미터 사용해서 데이터 전달  
+
+## HTML FORM 데이터 전송  
+* HTML FORM submit시 POST 전송  
+* Content-Type: application/x-www-form-urlencoded 사용  
+* HTML FORM은 GET전송도 가능  
+* Content-Type: multipart/form-data  
+  * 파일 업로드 같은 바이너리 데이터 전송시 사용  
+  * 다른 종류의 여러 파일과 폼의 내용 함께 전송 가능  
+* HTML FORM 전송은 GET, POST만 지원  
+
+## HTTP API 데이터 전송  
+* 서버 to 서버(백엔드 시스템 통신)  
+* 앱 클라이언트(아이폰, 안드로이드)  
+* 웹 클라이언트(AJAX)  
+* POST, PUT, PATCH: 메시지 바디를 통해 데이터 전송  
+* GET: 조회, 쿼리 파라미터로 데이터 전달  
+* Content-Type:application/json을 주로 사용  
+
+## 간단한 HTTP API 설계  
+#### API 설계 - POST 기반 등록  
+* 회원 목록 /members -> GET  
+* 회원 등록 /members -> POST  
+* 회원 조회 /members/{id} -> GET  
+* 회원 수정 /members/{id} -> PATCH, PUT, POST  
+* 회원 삭제 /members/{id} -> DELETE  
+##### 특징  
+* 클라이언트는 등록될 리소스의 URI 모름  
+* 서버가 새로 등록된 리소스 URI를 생성  
+* 컬렉션  
+  * 서버가 관리하는 리소스 디렉토리  
+  * 서버가 리소스의 URI를 생성하고 관리  
+  * 여기서 컬렉션은 /members  
+
+#### API 설계 - PUT 기반 등록  
+* 파일 목록 /files -> GET  
+* 파일 조회 /files/{filename} -> GET  
+* 파일 등록 /files/{filename} -> PUT  
+* 파일 삭제 /files/{filename} -> DELETE  
+* 파일 대량 등록 /files -> POST  
+
+##### 특징  
+* 클라이언트가 리소스 URI를 알고 있어야 한다 (PUT/files/star.jpg)  
+* 클라이언트가 직접 리소스의 URI를 지정  
+* 스토어  
+  * 클라이언트가 관리하는 리소스 저장소  
+  * 클라이언트가 리소스의 URI를 알고 관리  
+  * 여기서 스토어는 /files  
+
+#### API 설계 - HTML FORM 사용  
+* 회원 목록 /members -> GET  
+* 회원 등록 폼 /members/new -> GET  
+* 회원 등록 /members/new OR /members -> POST  
+* 회원 조회 /members/{id} -> GET  
+* 회원 수정 폼 /members/{id}/edit -> GET  
+* 회원 수정 /members{id}/edit OR /members/{id} -> POST  
+* 회원 삭제 /members/{id}/delete -> POST  
+
+##### 특징  
+* HTML FORM은 GET, POST만 지원  
+* AJAX같은 기술을 사용해서 해결 가능  
+* 컨트롤 URI  
+  * GET.POST만 지원해서 제약 있음  
+  * 해결을 위해 동사로 된 리소스 경로 사용  
+  * POST의 /new, /edit, /delete가 컨트롤 URI  
+
+
+
+
+
+
+
+
 
 
 
