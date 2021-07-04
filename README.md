@@ -136,7 +136,30 @@
 ![HTTP 지속](https://user-images.githubusercontent.com/59909855/124380226-92545d00-dcf6-11eb-8408-ff753c5885c2.PNG)  
 
 ## HTTP 메시지  
+![HTTP 메시지 구조](https://user-images.githubusercontent.com/59909855/124380463-ab114280-dcf7-11eb-8e6f-2d837c6f44e0.PNG)  
 
+## 시작 라인 - 요청 메시지  
+* start-line = request-line  
+* request-line = method SP(공백) request-target SP HTTP-version CRLF(엔터)  
+* HTTP 메서드(GET:조회)  
+* 요청 대상(/search?q=hello&hl=ko)  
+* HTTP Version  
+
+## 시작라인 - HTTP 메서드  
+* 종류: GET, POST, PUT, DELETE ...  
+* 서버가 수행해야 할 동작 지정  
+
+## 시작라인 - 요청 대상  
+* absolute-path[?query](/search?q=hello&hl=ko)  
+
+## 시작라인 - HTTP 버전  
+* HTTP Version(HTTP/1.1)  
+
+## 시작라인 - 응답 메시지  
+* start-line - status-line  
+* status-line = HTTP-version SP status-code SP reason-phrase CRLF  
+
+## HTTP 헤더  
 
 
 
