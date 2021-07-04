@@ -130,6 +130,12 @@
 * 지금은 HTTP 지속 연결로 문제 해결  
 
 ## HTTP초기 - 연결, 종료 낭비  
+![HTTP초기](https://user-images.githubusercontent.com/59909855/124380224-908a9980-dcf6-11eb-8d15-fb3e2470e2e6.PNG)  
+
+## HTTP 지속연결  
+![HTTP 지속](https://user-images.githubusercontent.com/59909855/124380226-92545d00-dcf6-11eb-8408-ff753c5885c2.PNG)  
+
+## HTTP 메시지  
 
 
 
