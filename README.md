@@ -508,8 +508,8 @@
 #### 쿠키-도메인  
 * 예) domain=example.org  
 * 명시: 명시한 문서 기준 도메인 + 서브 도메인 포함  
- * domain=example.org를 지정해서 쿠키 생성  
-  * example.org, dev.example.org 접근 가능  
+  * domain=example.org를 지정해서 쿠키 생성  
+   * example.org, dev.example.org 접근 가능  
 
 * 생략: 현재 문서 기준 도메인만 적용  
  * example.org 에서 쿠키를 생성하고 domain 지정을 생략  
@@ -523,17 +523,17 @@
 
 #### 쿠키-보안  
 * Secure  
- * 쿠키는 http, https를 구분하지 않고 전송  
- * Secure를 적용하면 https인 경우에만 전송  
+  * 쿠키는 http, https를 구분하지 않고 전송  
+  * Secure를 적용하면 https인 경우에만 전송  
 
 * HttpOnly  
- * XSS 공격 방지  
- * 자바스크립트에서 접근 불가(document.cookie)  
- * HTTP 전송에만 사용  
+  * XSS 공격 방지  
+  * 자바스크립트에서 접근 불가(document.cookie)  
+  * HTTP 전송에만 사용  
 
 * SameSite  
- * XSRF 공격 방지  
- * 요청 도메인과 쿠키에 설정된 도메인이 같은 경우만 쿠키 전송  
+  * XSRF 공격 방지  
+  * 요청 도메인과 쿠키에 설정된 도메인이 같은 경우만 쿠키 전송  
 
 
 
