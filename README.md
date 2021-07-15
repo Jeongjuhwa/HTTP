@@ -536,6 +536,41 @@
   * 요청 도메인과 쿠키에 설정된 도메인이 같은 경우만 쿠키 전송  
 
 
+## 캐시와 조건부 요청  
+#### 캐시가 없을 때  
+* 데이터가 변경되지 않아도 계속 네트워크를 통해 테이터 다운로드 -> 비효율적  
+
+#### 캐시 적용  
+![캐시1](https://user-images.githubusercontent.com/59909855/125774685-f623708b-d8f8-4b16-9166-9b9a9b6ee2a5.PNG)  
+![캐시2](https://user-images.githubusercontent.com/59909855/125774716-b3b368fe-ad25-401c-80fc-29ac9d091731.PNG)  
+
+* 캐시 덕분에 캐시 가능 시간동안 네트워크 사용 x
+* 비싼 네트워크 사용량 줄일 수 있음  
+* 브라우저 로딩 속도 빠름  
+
+## 캐시 시간 초과  
+* 캐시 유효 시간이 초과하면 2가지 상황 나타남  
+
+1. 서버에서 기존 데이터 변경  
+2. 변경x  
+
+* 캐시 만료후에도 데이터 변경 안했으면 재사용 가능 -> 대신 클라이언트 데이터와 서버 데이터가 같다는 사실 확인할 수 있는 방법 필요  
+
+![검증헤더 1](https://user-images.githubusercontent.com/59909855/125775612-1da46d06-fdb3-4dfd-8304-68dac0ec9330.PNG)  
+![검증헤더2](https://user-images.githubusercontent.com/59909855/125775614-896fe434-9d37-4f57-b168-7dd94b687db5.PNG)  
+![검증헤더3](https://user-images.githubusercontent.com/59909855/125775615-fc4dca89-64bf-487d-b009-a9131690fc68.PNG)  
+![검증헤더4](https://user-images.githubusercontent.com/59909855/125775616-ccb268f1-f886-4349-a1fa-b47f0e62c07b.PNG)  
+![검증헤더5](https://user-images.githubusercontent.com/59909855/125775617-23cfe479-62e0-4869-8f3f-f63cf93a6498.PNG)  
+![검증헤더6](https://user-images.githubusercontent.com/59909855/125775620-d0b19b19-cce4-47ea-90b2-825c71987d88.PNG)  
+![검증헤더7](https://user-images.githubusercontent.com/59909855/125775622-d5d99a28-4ca4-4afb-a9f7-b2718148358a.PNG)  
+![검증헤더8](https://user-images.githubusercontent.com/59909855/125775625-87b542b2-3a57-4d3e-b3ff-17dc1ad0092f.PNG)  
+
+
+
+
+
+
+
 
 
 
